@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg">
+
+    <EditText
+        android:id="@+id/txtJobCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtJobDescription"
+        android:layout_marginTop="20dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:hint="city"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnChooseSkills"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtJobCity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Choose Required Skills" />
+
+    <Button
+        android:id="@+id/btnPostAJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnChooseSkills"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Post Job" />
+
+    <EditText
+        android:id="@+id/txtJobTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:hint="Job title"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtJobDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtJobTitle"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:maxLines="4" />
+
+</RelativeLayout>
