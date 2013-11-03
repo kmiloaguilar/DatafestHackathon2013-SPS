@@ -3,7 +3,10 @@
         'text': '../Scripts/text',
         'durandal': '../Scripts/durandal',
         'plugins': '../Scripts/durandal/plugins',
-        'transitions': '../Scripts/durandal/transitions'
+        'transitions': '../Scripts/durandal/transitions',
+        'parse': '../Scripts/parse/parse-1.2.12.min',
+        'toastrmessage': '../Scripts/toastr',
+        'underscore': '../Scripts/underscore-amd-1.3.1.min',
     }
 });
 
@@ -15,7 +18,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = 'Choose a Job';
 
     app.configurePlugins({
         router: true,

@@ -6,10 +6,13 @@
             //You can add custom options too. Also, it returns a promise for the user's response.
             app.showMessage('Search not yet implemented...');
         },
-        activate: function () {
+        activate: function () {            
             router.map([
-                { route: '', title:'Welcome', moduleId: 'viewmodels/welcome', nav: true },
-                { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true }
+
+                { route: '', title: 'login', moduleId: 'viewmodels/login', nav: true },
+                { route: 'profile', title: 'profile', moduleId: 'viewmodels/profile', nav: true },
+                { route: 'createJob', title: 'Create Job', moduleId: 'viewmodels/jobCreator', nav: true },
+                { route: 'welcome', title:'Welcome', moduleId: 'viewmodels/welcome', nav: true }
             ]).buildNavigationModel();
             
             return router.activate();
