@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "DameChamba": {
+            "applicationId": "vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", 
+            "masterKey": "wDq9w5L26umD9nCTYZRPgevvtBnYdp5xrqUKBSPV"
+        }, 
+        "_default": {
+            "link": "DameChamba"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.12"
+    }
+}
