@@ -24,12 +24,12 @@ public class Signup extends Activity{
 		setContentView(R.layout.signup);
 		
 		final TextView txtName = (TextView) findViewById(R.id.txtSignupName);
+		txtName.requestFocus();
 		final TextView txtEmail = (TextView) findViewById(R.id.txtEmail);
 		final TextView txtPassword = (TextView) findViewById(R.id.txtSignupPassword);
 		final TextView txtConfirmPassword = (TextView) findViewById(R.id.txtSignupConfirmPassword);		
 		final TextView txtCity = (TextView) findViewById(R.id.txtSignupCity);
 		final TextView txtCellphone = (TextView) findViewById(R.id.txtSignupCellPhone);
-		final CheckBox chkBox = (CheckBox) findViewById(R.id.chkIsEmployee);
 		
 		Button btnSignup = (Button) findViewById(R.id.btnSaveSignup);
 		btnSignup.setOnClickListener(new OnClickListener() {
@@ -51,7 +51,6 @@ public class Signup extends Activity{
 				user.put("name", getText(txtName));
 				user.put("city", getText(txtCity));
 				user.put("phone", getText(txtCellphone));
-				user.put("isEmployer", getIsEmployer(chkBox));
 				
 				user.signUpInBackground(new SignUpCallback() {
 					

@@ -3,92 +3,102 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/bg" >
 
-    <EditText
-        android:id="@+id/txtSignupConfirmPassword"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/btnSaveSignup"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtSignupPassword"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Confirm Password" />
-
-    <EditText
-        android:id="@+id/txtSignupCity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtSignupConfirmPassword"
-        android:layout_marginTop="10dp"
-        android:contentDescription="username@server.com"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="City" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/blue_button"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Signup" />
 
     <EditText
         android:id="@+id/txtSignupCellPhone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSaveSignup"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtSignupCity"
-        android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="phone" 
-        android:hint="Cell Phone"/>
+        android:hint="Cell Phone"
+        android:inputType="phone" />
 
     <EditText
-        android:id="@+id/txtSignupName"
+        android:id="@+id/txtSignupCity"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/txtSignupCellPhone"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:contentDescription="username@server.com"
         android:ems="10"
-        android:hint="Your Name"
+        android:hint="City"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtSignupConfirmPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtSignupCity"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/txtSignupPassword"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/txtSignupConfirmPassword"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtEmail"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="password" />
-
-    <Button
-        android:id="@+id/btnSaveSignup"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Signup" />
+        android:hint="password"
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/txtSignupPassword"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtSignupName"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:contentDescription="username@server.com"
         android:ems="10"
         android:hint="username@server.com"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        />
 
-    <CheckBox
-        android:id="@+id/chkIsEmployee"
+    <EditText
+        android:id="@+id/txtSignupName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:hint="Your Name"
+        android:inputType="textPersonName" 
+        android:nextFocusDown="@id/txtEmail"/>
+
+    <TextView
+        android:id="@+id/txtCreatedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtSignupCellPhone"
-        android:layout_marginTop="14dp"
-        android:text="Are you looking for a job?" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Signup Form"
+        android:textSize="25dp" />
 
 </RelativeLayout>

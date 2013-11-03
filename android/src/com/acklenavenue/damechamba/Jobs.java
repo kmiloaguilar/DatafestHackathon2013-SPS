@@ -34,7 +34,7 @@ public class Jobs extends SherlockActivity{
 		TabHostProvider tabProvider = new MyTabHostProvider(Jobs.this);
 		TabView tabView = tabProvider.getTabHost("Jobs");
 		tabView.setCurrentView(R.layout.jobs);
-		setContentView(tabView.render(1));
+		setContentView(tabView.render(2));
 
 		cardsUI = (CardUI) tabView.getCurrentView().findViewById(R.id.cardsview);
 		// get jobs
@@ -48,7 +48,9 @@ public class Jobs extends SherlockActivity{
 			        if (e == null) {
 			        	JobCard card;
 			        	for(ParseObject job : jobs){
-			        		card = new JobCard(job.getString("title"), (ArrayList<Object>) job.getList("skills"));
+			        		ArrayList<Object> obj= (ArrayList<Object>) job.getList("skills");
+			        		if(obj == null) obj = new ArrayList<Object>();
+			        		card = new JobCard(job.getString("title"), job.getCreatedAt().toString(), obj, job.getObjectId());
 			        		cardsUI.addCard(card, true);
 			        	}
 			        	cardsUI.refresh();

@@ -25,8 +25,13 @@ public class MyProfile extends Activity{
 		ParseUser user = ParseUser.getCurrentUser();		
 		String username = user.getUsername().toString();
 		
-		TextView txtUserName = (TextView) tabView.getCurrentView().findViewById(R.id.txtProfileUserName);
-		txtUserName.setText("Welcome, " + username);		
+		TextView txtUserName = (TextView) tabView.getCurrentView().findViewById(R.id.txtProfileNamee);
+		txtUserName.setText(username);		
 		
+		TextView txtEmail = (TextView) tabView.getCurrentView().findViewById(R.id.txtProfileEmail);
+		txtEmail.setText(user.getEmail());
+
+		TextView txtCity = (TextView) tabView.getCurrentView().findViewById(R.id.txtCity);
+		txtCity.setText(user.getString("city"));
 	}
 }

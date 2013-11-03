@@ -1,11 +1,15 @@
 package com.acklenavenue.damechamba;
 
 import java.util.ArrayList;
-
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.sax.StartElementListener;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fima.cardsui.objects.Card;
 
@@ -13,19 +17,34 @@ public class JobCard extends Card{
 
 	String title;
 	ArrayList<Object> skills;
-	public JobCard(String title, ArrayList<Object> skills){
+	String createdDate;
+	String  id;
+	public JobCard(String title, String createdDate, ArrayList<Object> skills, String id){
 		super(title);
 		this.title = title;
 		this.skills = skills;
+		this.createdDate = createdDate;		
+		this.id = id;
 	}
 	
 	@Override
-	public View getCardContent(Context context) {
+	public View getCardContent(final Context context) {
 		View view = LayoutInflater.from(context).inflate(R.layout.card_play, null);
-		//String skills = getSkillsFormatted();
 				
 		((TextView) view.findViewById(R.id.txtCardTitle)).setText(title);
-		((TextView) view.findViewById(R.id.txtSkills)).setText(skills+"");
+		((TextView) view.findViewById(R.id.txtCreatedDate)).setText(createdDate);
+		((TextView) view.findViewById(R.id.txtSkills)).setText("Skills("+skills.size()+")");
+		
+		setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, ViewJob.class);
+				intent.putExtra("id", id);
+				Toast.makeText(context, "voy a enviar: " + id, Toast.LENGTH_LONG).show();
+				context.startActivity(intent);
+			}
+		});
+		
 		return view;
 	}
 	

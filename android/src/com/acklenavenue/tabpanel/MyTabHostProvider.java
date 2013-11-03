@@ -33,7 +33,7 @@ public class MyTabHostProvider extends TabHostProvider
 		
 		gradientDrawable = new GradientDrawable(
 	            GradientDrawable.Orientation.TOP_BOTTOM,
-	            new int[] {0xFFB2DA1D, 0xFF85A315});
+	            new int[] {Color.parseColor("#34495e"), Color.parseColor("#34495e")});
 	    gradientDrawable.setCornerRadius(0f);
 	    gradientDrawable.setDither(true);
 	    
@@ -47,16 +47,20 @@ public class MyTabHostProvider extends TabHostProvider
 	    profileTab.setIcon(R.drawable.user_icon);
 	    profileTab.setIconSelected(R.drawable.user_icon);
 	    profileTab.setIntent(new Intent(context, MyProfile.class));
-	    
+		profileTab.setSelectedBtnGradient(gradientDrawable);
+		profileTab.setBtnText("Profile");
+		
 	    jobsTab = new Tab(context, category);
 	    jobsTab.setIcon(R.drawable.jobs_icon);
 	    jobsTab.setIconSelected(R.drawable.jobs_icon);
 	    jobsTab.setIntent(new Intent(context, Jobs.class));
+		jobsTab.setSelectedBtnGradient(gradientDrawable);
 	    
 	    searchTab = new Tab(context, category);
 	    searchTab.setIcon(R.drawable.search_icon);
 	    searchTab.setIconSelected(R.drawable.search_icon);
 	    searchTab.setIntent(new Intent(context, Search.class));
+		searchTab.setSelectedBtnGradient(gradientDrawable);
 	       
 /*
 		homeTab = new Tab(context, category);
@@ -65,15 +69,13 @@ public class MyTabHostProvider extends TabHostProvider
 		homeTab.setBtnText("Home");
 		homeTab.setBtnTextColor(Color.WHITE);
 		homeTab.setSelectedBtnTextColor(Color.BLACK);
-//		homeTab.setBtnColor(Color.parseColor("#00000000"));
-//		homeTab.setSelectedBtnColor(Color.parseColor("#0000FF"));
 		homeTab.setBtnGradient(transGradientDrawable);
 		homeTab.setSelectedBtnGradient(gradientDrawable);
 		homeTab.setIntent(new Intent(context, HomeActivity.class));	
 */
 	    tabView.addTab(profileTab);
-	    tabView.addTab(jobsTab);
 	    tabView.addTab(searchTab);
+	    tabView.addTab(jobsTab);
 		return tabView;
 	}
 }

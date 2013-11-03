@@ -6,59 +6,72 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Login" >
+    tools:context=".Login" 
+    android:background="@drawable/bg">
 
-    <EditText
-        android:id="@+id/txtSignupName"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/txtSignup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:hint="username@server.com"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtSignupName"
-        android:layout_below="@+id/txtSignupName"
-        android:layout_marginTop="24dp"
-        android:hint="password"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtPassword"
-        android:layout_centerVertical="true"
-        android:text="Login" />
+        android:layout_alignBottom="@+id/txtForgotPass"
+        android:layout_alignRight="@+id/txtPassword"
+        android:text="Not a user? Signup"
+        android:textColor="#417DD0" />
 
     <TextView
         android:id="@+id/txtForgotPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLogin"
         android:layout_alignLeft="@+id/txtPassword"
-        android:layout_below="@+id/txtPassword"
-        android:layout_marginTop="26dp"
-        android:text="Forgot Password?"
-        android:autoLink="all" />
+        android:layout_marginBottom="24dp"
+        android:autoLink="all"
+        android:text="Forgot Password?" 
+        android:textColor="#417DD0"/>
 
     <Button
-        android:id="@+id/btnSignup"
+        android:id="@+id/btnLogin"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/green_button"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Login" />
+
+    <EditText
+        android:id="@+id/txtPassword"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnLogin"
-        android:layout_below="@+id/btnLogin"
-        android:layout_marginTop="17dp"
-        android:text="Signup" />
+        android:layout_above="@+id/txtSignup"
+        android:layout_alignLeft="@+id/txtSignupName"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/txtSignupName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="username@server.com"
+        android:inputType="textPersonName" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtSignupName"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="31dp"
+        android:src="@drawable/icon" />
 
 </RelativeLayout>

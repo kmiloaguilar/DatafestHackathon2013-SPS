@@ -61,8 +61,8 @@ public class Login extends Activity {
 			}
 		});		
 		
-		Button btnSignup = (Button) findViewById(R.id.btnSignup);
-		btnSignup.setOnClickListener(new OnClickListener() {
+		TextView txtSignup = (TextView) findViewById(R.id.txtSignup);
+		txtSignup.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
