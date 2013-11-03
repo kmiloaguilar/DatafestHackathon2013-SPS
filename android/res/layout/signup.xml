@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/txtSignupConfirmPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtSignupPassword"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Confirm Password" />
+
+    <EditText
+        android:id="@+id/txtSignupCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtSignupConfirmPassword"
+        android:layout_marginTop="10dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="City" />
+
+    <EditText
+        android:id="@+id/txtSignupCellPhone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtSignupCity"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="phone" 
+        android:hint="Cell Phone"/>
+
+    <EditText
+        android:id="@+id/txtSignupName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:hint="Your Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtSignupPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtEmail"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="password" />
+
+    <Button
+        android:id="@+id/btnSaveSignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Signup" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtSignupName"
+        android:layout_marginTop="10dp"
+        android:contentDescription="username@server.com"
+        android:ems="10"
+        android:hint="username@server.com"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/chkIsEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtSignupCellPhone"
+        android:layout_marginTop="14dp"
+        android:text="Are you looking for a job?" />
+
+</RelativeLayout>
