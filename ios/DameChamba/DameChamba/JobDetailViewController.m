@@ -201,5 +201,11 @@
 }
 
 - (IBAction)btnApplyPressed:(id)sender {
+    PFObject *application = [PFObject objectWithClassName:@"Applications"];
+    application[@"user"] = [PFUser currentUser];
+    application[@"job"] = self.jobDetail;
+    [application saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        
+    }];
 }
 @end

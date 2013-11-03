@@ -137,10 +137,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"jobscreated"]) {
-        
+        JobsViewController *jobsViewController = (JobsViewController *)[segue destinationViewController];
+        jobsViewController.filterForJobs = @"jobscreated";
     }
     else if ([[segue identifier] isEqualToString:@"jobsapplied"]){
-        
+        JobsViewController *jobsViewController = (JobsViewController *)[segue destinationViewController];
+        jobsViewController.filterForJobs = @"jobsapplied";
     }
     else if ([[segue identifier] isEqualToString:@"skills"]){
         SkillsViewController *skillsViewController = (SkillsViewController *)[segue destinationViewController];

@@ -77,7 +77,7 @@
         
     }
     else if ([self.filterForJobs isEqualToString:@"jobscreated"]) {
-        
+        [self queryJobsCreatedByCurrentUser];
     }
     else{
         [self queryRecentJobs];
