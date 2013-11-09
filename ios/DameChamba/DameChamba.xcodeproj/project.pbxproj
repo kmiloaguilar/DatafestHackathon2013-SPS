@@ -36,6 +36,23 @@
 		CE2457501823FB96005755B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE24574F1823FB96005755B2 /* Security.framework */; };
 		CE2457521823FB9B005755B2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2457511823FB9B005755B2 /* StoreKit.framework */; };
 		CE2457541823FBA4005755B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2457531823FBA4005755B2 /* SystemConfiguration.framework */; };
+		CED74CCE182579BB009B76B5 /* profile_icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CED74CCC182579BB009B76B5 /* profile_icon~iphone.png */; };
+		CED74CCF182579BB009B76B5 /* profile_icon@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CED74CCD182579BB009B76B5 /* profile_icon@2x~iphone.png */; };
+		CED74CD218257AB2009B76B5 /* jobs_icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CED74CD018257AB2009B76B5 /* jobs_icon~iphone.png */; };
+		CED74CD318257AB2009B76B5 /* jobs_icon@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CED74CD118257AB2009B76B5 /* jobs_icon@2x~iphone.png */; };
+		CED74CD7182585AA009B76B5 /* TwilioHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CD6182585AA009B76B5 /* TwilioHelper.m */; };
+		CED74CE01825E4BC009B76B5 /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CDF1825E4BC009B76B5 /* JobsViewController.m */; };
+		CED74CE31825E4C7009B76B5 /* NewJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CE21825E4C7009B76B5 /* NewJobViewController.m */; };
+		CED74CE61825E67F009B76B5 /* SkillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CE51825E67F009B76B5 /* SkillsViewController.m */; };
+		CED74CEA1825E6FE009B76B5 /* JobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CE91825E6FE009B76B5 /* JobCell.m */; };
+		CED74CEE1825F134009B76B5 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CED1825F134009B76B5 /* UIPlaceHolderTextView.m */; };
+		CED74CF21825F3A8009B76B5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CF11825F3A8009B76B5 /* ProfileViewController.m */; };
+		CED74CF518261C3B009B76B5 /* JobDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CF418261C3B009B76B5 /* JobDetailViewController.m */; };
+		CED74CF81826A37F009B76B5 /* JobDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CF71826A37F009B76B5 /* JobDetailCell.m */; };
+		CED74CFB1826A38B009B76B5 /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED74CFA1826A38B009B76B5 /* MapCell.m */; };
+		CED74CFD1826A3C9009B76B5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED74CFC1826A3C9009B76B5 /* MapKit.framework */; };
+		CEF70FC81825424700FB1C40 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF70FC71825424700FB1C40 /* RegisterViewController.m */; };
+		CEF70FCB182542B700FB1C40 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF70FCA182542B700FB1C40 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +101,35 @@
 		CE24574F1823FB96005755B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE2457511823FB9B005755B2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CE2457531823FBA4005755B2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CED74CCC182579BB009B76B5 /* profile_icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_icon~iphone.png"; sourceTree = "<group>"; };
+		CED74CCD182579BB009B76B5 /* profile_icon@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_icon@2x~iphone.png"; sourceTree = "<group>"; };
+		CED74CD018257AB2009B76B5 /* jobs_icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobs_icon~iphone.png"; sourceTree = "<group>"; };
+		CED74CD118257AB2009B76B5 /* jobs_icon@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jobs_icon@2x~iphone.png"; sourceTree = "<group>"; };
+		CED74CD5182585AA009B76B5 /* TwilioHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwilioHelper.h; sourceTree = "<group>"; };
+		CED74CD6182585AA009B76B5 /* TwilioHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwilioHelper.m; sourceTree = "<group>"; };
+		CED74CDE1825E4BC009B76B5 /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
+		CED74CDF1825E4BC009B76B5 /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsViewController.m; sourceTree = "<group>"; };
+		CED74CE11825E4C7009B76B5 /* NewJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJobViewController.h; sourceTree = "<group>"; };
+		CED74CE21825E4C7009B76B5 /* NewJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJobViewController.m; sourceTree = "<group>"; };
+		CED74CE41825E67F009B76B5 /* SkillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillsViewController.h; sourceTree = "<group>"; };
+		CED74CE51825E67F009B76B5 /* SkillsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillsViewController.m; sourceTree = "<group>"; };
+		CED74CE81825E6FE009B76B5 /* JobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobCell.h; sourceTree = "<group>"; };
+		CED74CE91825E6FE009B76B5 /* JobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobCell.m; sourceTree = "<group>"; };
+		CED74CEC1825F134009B76B5 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		CED74CED1825F134009B76B5 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		CED74CF01825F3A8009B76B5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CED74CF11825F3A8009B76B5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CED74CF318261C3B009B76B5 /* JobDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailViewController.h; sourceTree = "<group>"; };
+		CED74CF418261C3B009B76B5 /* JobDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailViewController.m; sourceTree = "<group>"; };
+		CED74CF61826A37F009B76B5 /* JobDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailCell.h; sourceTree = "<group>"; };
+		CED74CF71826A37F009B76B5 /* JobDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailCell.m; sourceTree = "<group>"; };
+		CED74CF91826A38B009B76B5 /* MapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCell.h; sourceTree = "<group>"; };
+		CED74CFA1826A38B009B76B5 /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCell.m; sourceTree = "<group>"; };
+		CED74CFC1826A3C9009B76B5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEF70FC61825424700FB1C40 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		CEF70FC71825424700FB1C40 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		CEF70FC9182542B700FB1C40 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CEF70FCA182542B700FB1C40 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED74CFD1826A3C9009B76B5 /* MapKit.framework in Frameworks */,
 				CE2457541823FBA4005755B2 /* SystemConfiguration.framework in Frameworks */,
 				CE2457521823FB9B005755B2 /* StoreKit.framework in Frameworks */,
 				CE2457501823FB96005755B2 /* Security.framework in Frameworks */,
@@ -145,6 +192,7 @@
 		CE2456FE1823F97C005755B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CED74CFC1826A3C9009B76B5 /* MapKit.framework */,
 				CE2457531823FBA4005755B2 /* SystemConfiguration.framework */,
 				CE2457511823FB9B005755B2 /* StoreKit.framework */,
 				CE24574F1823FB96005755B2 /* Security.framework */,
@@ -167,6 +215,11 @@
 		CE2457071823F97C005755B2 /* DameChamba */ = {
 			isa = PBXGroup;
 			children = (
+				CED74CEB1825F118009B76B5 /* TextViews */,
+				CED74CE71825E6E7009B76B5 /* TableViewCells */,
+				CED74CD41825858A009B76B5 /* Helpers */,
+				CED74CCA182579AD009B76B5 /* Resources */,
+				CEF70FC21825422300FB1C40 /* ViewControllers */,
 				CE2457381823FAF9005755B2 /* Libraries */,
 				CE2457101823F97C005755B2 /* AppDelegate.h */,
 				CE2457111823F97C005755B2 /* AppDelegate.m */,
@@ -228,6 +281,77 @@
 			path = TestFlightSDK2.0.2;
 			sourceTree = "<group>";
 		};
+		CED74CCA182579AD009B76B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED74CCB182579B2009B76B5 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CED74CCB182579B2009B76B5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CED74CD018257AB2009B76B5 /* jobs_icon~iphone.png */,
+				CED74CD118257AB2009B76B5 /* jobs_icon@2x~iphone.png */,
+				CED74CCC182579BB009B76B5 /* profile_icon~iphone.png */,
+				CED74CCD182579BB009B76B5 /* profile_icon@2x~iphone.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		CED74CD41825858A009B76B5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CED74CD5182585AA009B76B5 /* TwilioHelper.h */,
+				CED74CD6182585AA009B76B5 /* TwilioHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CED74CE71825E6E7009B76B5 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				CED74CE81825E6FE009B76B5 /* JobCell.h */,
+				CED74CE91825E6FE009B76B5 /* JobCell.m */,
+				CED74CF61826A37F009B76B5 /* JobDetailCell.h */,
+				CED74CF71826A37F009B76B5 /* JobDetailCell.m */,
+				CED74CF91826A38B009B76B5 /* MapCell.h */,
+				CED74CFA1826A38B009B76B5 /* MapCell.m */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		CED74CEB1825F118009B76B5 /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				CED74CEC1825F134009B76B5 /* UIPlaceHolderTextView.h */,
+				CED74CED1825F134009B76B5 /* UIPlaceHolderTextView.m */,
+			);
+			name = TextViews;
+			sourceTree = "<group>";
+		};
+		CEF70FC21825422300FB1C40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEF70FC61825424700FB1C40 /* RegisterViewController.h */,
+				CEF70FC71825424700FB1C40 /* RegisterViewController.m */,
+				CEF70FC9182542B700FB1C40 /* LoginViewController.h */,
+				CEF70FCA182542B700FB1C40 /* LoginViewController.m */,
+				CED74CDE1825E4BC009B76B5 /* JobsViewController.h */,
+				CED74CDF1825E4BC009B76B5 /* JobsViewController.m */,
+				CED74CE11825E4C7009B76B5 /* NewJobViewController.h */,
+				CED74CE21825E4C7009B76B5 /* NewJobViewController.m */,
+				CED74CE41825E67F009B76B5 /* SkillsViewController.h */,
+				CED74CE51825E67F009B76B5 /* SkillsViewController.m */,
+				CED74CF01825F3A8009B76B5 /* ProfileViewController.h */,
+				CED74CF11825F3A8009B76B5 /* ProfileViewController.m */,
+				CED74CF318261C3B009B76B5 /* JobDetailViewController.h */,
+				CED74CF418261C3B009B76B5 /* JobDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,6 +399,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Angel Camilo Aguilar Fernandez";
 				TargetAttributes = {
+					CE2456FB1823F97C005755B2 = {
+						DevelopmentTeam = X3KE4D8NUM;
+					};
 					CE24571B1823F97C005755B2 = {
 						TestTargetID = CE2456FB1823F97C005755B2;
 					};
@@ -303,10 +430,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED74CCF182579BB009B76B5 /* profile_icon@2x~iphone.png in Resources */,
 				CE2457351823F99B005755B2 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CE24570C1823F97C005755B2 /* InfoPlist.strings in Resources */,
+				CED74CCE182579BB009B76B5 /* profile_icon~iphone.png in Resources */,
 				CE2457411823FB03005755B2 /* README.md in Resources */,
 				CE2457171823F97C005755B2 /* Images.xcassets in Resources */,
+				CED74CD218257AB2009B76B5 /* jobs_icon~iphone.png in Resources */,
+				CED74CD318257AB2009B76B5 /* jobs_icon@2x~iphone.png in Resources */,
 				CE2457421823FB03005755B2 /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,9 +457,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF70FC81825424700FB1C40 /* RegisterViewController.m in Sources */,
+				CED74CE01825E4BC009B76B5 /* JobsViewController.m in Sources */,
 				CE2457151823F97C005755B2 /* DameChamba.xcdatamodeld in Sources */,
 				CE2457121823F97C005755B2 /* AppDelegate.m in Sources */,
+				CED74CF81826A37F009B76B5 /* JobDetailCell.m in Sources */,
+				CED74CE61825E67F009B76B5 /* SkillsViewController.m in Sources */,
+				CED74CD7182585AA009B76B5 /* TwilioHelper.m in Sources */,
+				CED74CE31825E4C7009B76B5 /* NewJobViewController.m in Sources */,
+				CED74CEA1825E6FE009B76B5 /* JobCell.m in Sources */,
+				CED74CEE1825F134009B76B5 /* UIPlaceHolderTextView.m in Sources */,
 				CE24570E1823F97C005755B2 /* main.m in Sources */,
+				CED74CF21825F3A8009B76B5 /* ProfileViewController.m in Sources */,
+				CED74CF518261C3B009B76B5 /* JobDetailViewController.m in Sources */,
+				CED74CFB1826A38B009B76B5 /* MapCell.m in Sources */,
+				CEF70FCB182542B700FB1C40 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +530,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Angel Aguilar (2LTR362M78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Angel Aguilar (2LTR362M78)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -405,6 +549,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "11534286-503E-4A5E-ADFA-B496B4C3832A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -426,7 +571,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Angel Aguilar (2LTR362M78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Angel Aguilar (2LTR362M78)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -437,6 +583,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "11534286-503E-4A5E-ADFA-B496B4C3832A";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -447,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/angelcamiloaguilarfernandez/Documents/AcklenAvenue/Hackathon/ios/DameChamba,
@@ -468,6 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/angelcamiloaguilarfernandez/Documents/AcklenAvenue/Hackathon/ios/DameChamba,
@@ -545,6 +694,7 @@
 				CE2457301823F97C005755B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2457311823F97C005755B2 /* Build configuration list for PBXNativeTarget "DameChambaTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +703,7 @@
 				CE2457331823F97C005755B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

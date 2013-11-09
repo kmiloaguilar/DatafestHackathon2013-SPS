@@ -17,7 +17,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    
+    [application registerForRemoteNotificationTypes:    UIRemoteNotificationTypeBadge |
+                                                        UIRemoteNotificationTypeAlert |
+                                                        UIRemoteNotificationTypeSound];
     
     [Parse setApplicationId:@"vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID"
                   clientKey:@"oGEwXFIs81f956FirttrYcjv3EyrDqEBpU7J3XKR"];
@@ -25,6 +27,17 @@
     [TestFlight takeOff:@"29addcea-cf16-48c9-b3b9-ce8f30d81e6d"];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
