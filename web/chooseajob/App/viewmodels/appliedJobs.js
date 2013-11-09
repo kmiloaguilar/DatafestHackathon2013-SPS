@@ -1,4 +1,4 @@
-﻿define(["underscore", "datacontext", "plugins/router", "durandal/app"], function (_, dc, router,app) {
+﻿define(["underscore", "datacontext", "plugins/router", "durandal/app","notifier"], function (_, dc, router,app, notifier) {
     var viewmodel = function () {
         var username = ko.observable("");
         var name = ko.observable("");
@@ -10,23 +10,30 @@
             viewUrl: "views/joblist",
             Jobs: jobs,
             Title: title,
-            JobListTitle: ko.observable("Available Jobs"),
+            JobListTitle: ko.observable("Applied Jobs"),
             showApply: ko.observable(true),
             showCancel: ko.observable(false),
-            showCancelApply: ko.observable(false),
+            showCancelApply: ko.observable(true),
             ClickShowMessage: function (jobItem) {
                 app.showDialog('viewmodels/viewMessage', { item: jobItem }).then(function (dialogResult) {
-                    if (dialogResult) {
+
+                });
+            },
+            ClickCancelApp: function (item) {
+                dc.Jobs.deleteApplication(username(), item.id, function (myObj) {
+                    _.each(myObj, function(application) {
+                        application.destroy({});
                         location.reload();
-                    }
+                        notifier.SuccessMessage("Application cancelled successfully");
+                    });
                 });
             },
             attached: function () {
                 if (currentUser) {
-                    _.each(currentUser.attributes.skills, function (skill) {
-                        dc.Jobs.getJobsEmployee(skill, currentUser.attributes.city, username(), function (jobsFromParse) {
-                            _.each(jobsFromParse, function (item, index) {
-                                dc.Jobs.getApplications(username(), function (applications) {
+                    dc.Jobs.getApplications(username(), function(applications) {
+                        _.each(applications, function(application) {
+                            dc.Jobs.getAppliedJobs(application.attributes.JobId, function (jobFromParse) {
+                                _.each(jobFromParse, function(item) {
                                     var dd = item.createdAt.getDate();
                                     var mm = item.createdAt.getMonth();
                                     var yyyy = item.createdAt.getFullYear();
@@ -40,38 +47,24 @@
                                         });
                                         skillsobject = skillsobject.substring(0, skillsobject.length - 2);
                                     }
-
-                                    var job = { city: item.attributes.city, title: item.attributes.title, date: date, skills: skillsobject, description: item.attributes.description, id: item.id, canApply: true };
+                                    var job = { city: item.attributes.city, title: item.attributes.title, date: date, skills: skillsobject, description: item.attributes.description, id: item.id, canApply: false };
                                     var canPush = true;
                                     _.each(jobs(), function (jobInArray) {
                                         if (jobInArray.title == job.title && jobInArray.city == job.city && jobInArray.skills == job.skills && jobInArray.date == job.date) {
                                             canPush = false;
                                         }
                                     });
-                                    _.each(applications, function (application) {
-                                        if (application.attributes.JobId == job.id) {
-                                            canPush = false;
-                                        }
-                                    });
                                     if (canPush) {
                                         jobs.push(job);
-                                        title("You have " + jobs().length + " Jobs that match with your city and skills");
-                                    }
-                                    if (jobs().length == 0) {
-                                        title("You have " + jobs().length + " Jobs that match with your city and skills");
+                                        title("You have " + jobs().length + " Applied Jobs");
                                     }
                                 });
                             });
-                            if (jobsFromParse.length == 0) {
-                                title("You have 0 Jobs that match with your city and skills");
-                            }
                         });
-                    });
-                    if (currentUser.attributes.skills == undefined) {
-                        title("You need to select your skills, please update your profile information");
-                    }
-                    
-                        
+                        if (applications.length == 0) {
+                            title("You have 0 Applied Jobs");
+                        }
+                    });                   
                 }
             },
             activate: function () {

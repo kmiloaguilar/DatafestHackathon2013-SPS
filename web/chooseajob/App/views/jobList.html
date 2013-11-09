@@ -1,5 +1,5 @@
 ﻿<div style="top:-20px; position: relative" class="main-content">
-    <div style="top: -20px; position: relative;" class="breadcrumbs" id="breadcrumbs">
+    <div style="top: -20px; position: relative; height: 1px" class="breadcrumbs" id="breadcrumbs">
         <div class="page-header">
             <h1 data-bind="text:JobListTitle"></h1>
         </div>
@@ -34,13 +34,19 @@
                                     <div class="message-list" id="message-list" data-bind="foreach: Jobs">
                                         <div class="message-item">
                                             <span style="width: 250px" class="sender" data-bind="text:city"/>
-                                            <span style="width: 90px" class="time" data-bind="text: date"></span>
+                                            <span style="width: 90px;top: 8px;position: relative;" class="time" data-bind="text: date"></span>
 
-                                            <span style="width: 300px" class="summary">
+                                            <span style="width: 200px" class="summary">
                                                 <span class="text" data-bind="text: title"/>
                                                 
                                             </span>
-                                            <span class="text" data-bind="text: skills"/>
+                                            <span style="width: 150px" class="summary">
+                                                <span class="text" data-bind="text: skills"/>
+                                            </span>
+                                            <button data-bind="visible: $parent.showApply, click:$parent.ClickShowMessage"  type="button" class="btn btn-info">View Job Detail</button>
+                                            <button data-bind="visible: $parent.showCancel, click: $parent.ClickShowApplications"  type="button" class="btn btn-info">View Applications</button>
+                                            <button data-bind="visible: $parent.showCancel, click: $parent.ClickDelete"  type="button" class="btn btn-danger">Delete</button>
+                                            <button data-bind="visible: $parent.showCancelApply, click: $parent.ClickCancelApp"  type="button" class="btn btn-danger">Cancel Application</button>
                                         </div>
                                     </div>
                                 </div>
