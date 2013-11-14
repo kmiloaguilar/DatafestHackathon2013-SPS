@@ -68,7 +68,35 @@
                     }else{throw "Log in first to get the current user";}
                 }
             },
+            User: {
+                getUserById: function(username, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var users = Parse.Object.extend("User");
+                    var query = new Parse.Query(users);
+                    query.equalTo("username", username);
+                    query.find({ success: success });
+                }
+            },
             Jobs: {
+                deleteApplication: function(username, jobid, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var applications = Parse.Object.extend("Applications");
+                    var query = new Parse.Query(applications);
+                    query.equalTo("username", username);
+                    query.equalTo("JobId", jobid);
+                    query.find({
+                        success: success
+                    });
+                },
+                deleteJob: function(jobId, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var jobs = Parse.Object.extend("Jobs");
+                    var query = new Parse.Query(jobs);
+                    query.equalTo("objectId", jobId);
+                    query.find({
+                        success: success
+                    });
+                },
                 addJob: function (jobObject, succes, error){
                     Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
                     var job =  Parse.Object.extend("Jobs");
@@ -82,18 +110,28 @@
                     newJob.set("createdBy", jobObject.Name);
                     newJob.save(null, {success: succes, error: error} );
                 },
+                addApplication: function (applicationObject, succes) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var applications = Parse.Object.extend("Applications");
+
+                    var newApplication = new applications();
+                    newApplication.set("username", applicationObject.username);
+                    newApplication.set("JobId", applicationObject.jobId);
+                    newApplication.save(null, { success: succes });
+                },
                 getAllJobs: function (success) {
                     Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
                     var jobs = Parse.Object.extend("Jobs");
                     var query = new Parse.Query(jobs);
                     query.find({ success: success });
                 },
-                getJobsEmployee: function (skill, city, success) {
+                getJobsEmployee: function (skill, city, username, success) {
                     Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
                     var jobs = Parse.Object.extend("Jobs");
                     var query = new Parse.Query(jobs);
                     query.equalTo("skills", skill);
                     query.equalTo("city", city);
+                    query.notEqualTo("createdBy", username);
                     query.find({ success: success });
                 },
                 getJobsEmployer: function (username, success, error) {
@@ -103,6 +141,28 @@
                         query.equalTo("createdBy", username);
                         query.find({ success: success, error: error });
                 },
+                getApplications: function(username, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var applications = Parse.Object.extend("Applications");
+                    var query = new Parse.Query(applications);
+                    query.equalTo("username", username);
+                    query.find({ success: success });
+                },
+                getApplicationsByJobId: function (jobId, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var applications = Parse.Object.extend("Applications");
+                    var query = new Parse.Query(applications);
+                    query.equalTo("JobId", jobId);
+                    query.find({ success: success });
+                },
+                getAppliedJobs: function (jobId, success) {
+                    Parse.initialize("vACnwFsPhrcKYpFEvO72kdzJScGzGHS62dxrC2ID", "q2sRm5Vs4axb0UFYm8W3p22Z679Rto3ZuT9VMmHu");
+                    var jobs = Parse.Object.extend("Jobs");
+                    var query = new Parse.Query(jobs);
+                    query.equalTo("objectId", jobId);
+                    query.find({ success: success });
+                }
+                
             }
         };
     }(serverImplementation);

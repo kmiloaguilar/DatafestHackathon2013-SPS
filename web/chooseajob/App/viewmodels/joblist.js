@@ -1,4 +1,4 @@
-﻿define(["underscore", "datacontext", "plugins/router"], function (_, dc, router) {
+﻿define(["underscore", "datacontext", "plugins/router", "durandal/app"], function (_, dc, router, app) {
     var viewmodel = function () {
         var username = ko.observable("");
         var name = ko.observable("");
@@ -11,6 +11,27 @@
             Jobs: jobs,
             Title: title,
             JobListTitle: ko.observable("Created Jobs"),
+            showApply: ko.observable(false),
+            showCancel: ko.observable(true),
+            showCancelApply: ko.observable(false),
+            ClickDelete: function(item) {
+                dc.Jobs.deleteJob(item.id, function(jobFromParse) {
+                    _.each(jobFromParse, function(job) {
+                        job.destroy();
+                        dc.Jobs.deleteApplication(username(), item.id, function(applications) {
+                            _.each(applications, function (application) {
+                                application.destroy();
+                            });
+                        });
+                        
+                        location.reload();
+                    });
+                });
+            },
+            ClickShowApplications: function(item) {
+                app.showDialog('viewmodels/viewApplications', { item: item }).then(function () {
+                });
+            },
             attached: function () {
                 if (currentUser) {
                         dc.Jobs.getJobsEmployer(username(), function(jobsFromParse) {
@@ -34,7 +55,7 @@
                                 }
 
 
-                                var job = { city: item.attributes.city, title: item.attributes.title, date: date, skills: skills };
+                                var job = { city: item.attributes.city, title: item.attributes.title, date: date, skills: skills, description: item.attributes.description, id: item.id, canApply: false };
                                 jobs.push(job);
                             });
                             title("You have " + jobs().length + " Jobs Created");

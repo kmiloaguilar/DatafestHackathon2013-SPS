@@ -136,9 +136,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\cookiesManagement.js" />
     <Content Include="App\datacontext.js" />
     <Content Include="App\main.js" />
     <Content Include="App\notifier.js" />
+    <Content Include="App\viewmodels\appliedJobs.js" />
     <Content Include="App\viewmodels\availableJoblist.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\jobCreator.js" />
@@ -146,6 +148,7 @@
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\profile.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\viewApplications.js" />
     <Content Include="App\viewmodels\viewMessage.js" />
     <Content Include="App\viewmodels\welcome.js" />
     <Content Include="App\views\detail.html" />
@@ -155,6 +158,7 @@
     <Content Include="App\views\login.html" />
     <Content Include="App\views\profile.html" />
     <Content Include="App\views\shell.html" />
+    <Content Include="App\views\viewApplications.html" />
     <Content Include="App\views\viewMessage.html" />
     <Content Include="App\views\welcome.html" />
     <Content Include="Content\ace-fonts.css" />

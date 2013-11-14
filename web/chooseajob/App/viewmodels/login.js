@@ -1,4 +1,4 @@
-﻿define(["plugins/router", "datacontext", "notifier"], function (router, dc, notifier) {
+﻿define(["plugins/router", "datacontext", "notifier","cookiesManagement"], function (router, dc, notifier,cookies) {
 
     var viewmodel = function () {
         var name = ko.observable("");
@@ -69,7 +69,8 @@
                             city("");
                             phone("");
                             isEmployer(false);
-                            show_box('login-box');
+                            cookies.SetCookie("viewmodels/availableJoblist", "first");
+                            router.navigate("/welcome");
                         }, function (user, error) {
                             alert("Error: " + error.code + " " + error.message);
                         });
@@ -86,6 +87,7 @@
                         notifier.SuccessMessage("user authenticated");
                         loginEmail("");
                         loginPassword("");
+                        cookies.SetCookie("viewmodels/availableJoblist", "first");
                         router.navigate("/welcome");
                     }, function (error) {
                         notifier.ErrorMessage("the user or password are not correct");
