@@ -35,8 +35,19 @@
 
     self.skills = self.jobDetail[@"skills"];
     
-    NSLog(@"skills: %@",self.skills);
-    NSLog(@"job: %@",self.jobDetail);
+//    PFUser *currentUser = [PFUser currentUser];
+//    if ([[currentUser username] isEqualToString:self.jobDetail[@"createdBy"]]) {
+//        self.navigationItem.rightBarButtonItem = nil;
+//    }
+//    else{
+//        PFQuery *query = [PFQuery queryWithClassName:@"Applications"];
+//        [query whereKey:@"job" equalTo:self.jobDetail];
+//        [query whereKey:@"applicationBy" equalTo:[PFUser currentUser]];
+//        PFObject *application = [query getFirstObject];
+//        if (application == NULL) {
+//            self.navigationItem.rightBarButtonItem = nil;
+//        }
+//    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -205,7 +216,16 @@
     application[@"user"] = [PFUser currentUser];
     application[@"job"] = self.jobDetail;
     [application saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        
+        if (!error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Great" message:@"You already applied! Wait for contact from employer" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alertView show];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
     }];
 }
 @end

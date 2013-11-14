@@ -52,10 +52,19 @@
     }];
 }
 
-//- (void)queryJobsThatCurrentUserApplied{
-//    PFQuery *query = [PFQuery queryWithClassName:@"Applications"];
-//    [query whereKey:@"appliedBy" containsAllObjectsInArray:<#(NSArray *)#>]
-//}
+- (void)queryJobsThatCurrentUserApplied{
+    PFQuery *query = [PFQuery queryWithClassName:@"Applications"];
+    [query whereKey:@"applicationBy" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        self.jobs = [[NSMutableArray alloc] init];
+        if (objects) {
+            for (PFObject *applications in objects) {
+                [self.jobs addObject:applications[@"jobs"]];
+            }
+            [self.tableView reloadData];
+        }
+    }];
+}
 
 - (void)viewDidLoad
 {

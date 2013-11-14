@@ -124,13 +124,13 @@
                 
                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (!error) {
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Great" message:@"Now you can start using DameChamba" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Great" message:@"Now you can start using DameChamba" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                         [alertView show];
                         [self.navigationController popViewControllerAnimated:YES];
                         
                     } else {
                         NSString *errorString = [error userInfo][@"error"];
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                         [alertView show];
                     }
                 }];

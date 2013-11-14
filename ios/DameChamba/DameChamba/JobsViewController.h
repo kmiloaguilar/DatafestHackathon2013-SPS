@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JobsViewController : UITableViewController
+@interface JobsViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (strong,nonatomic) NSString *filterForJobs;
 
